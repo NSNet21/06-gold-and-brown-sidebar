@@ -1,0 +1,527 @@
+:root {
+  --text: #feeac3;
+  --background: #0f060a;
+  --primary: #f29b21;
+  --search-box-color: #473e42;
+  --secondary: #463a3f;
+  --accent: #ff822e;
+  --box-shadow-overlay-color: rgba(255, 130, 46, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-size: 80%;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the sidebar */
+
+.side-bar {
+  background-color: var(--background);
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.5s ease;
+}
+
+.logo-container {
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  cursor: default;
+  overflow: hidden;
+  width: 100%;
+  max-width: 230px;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+/* hover state to change logo & logo text color */
+
+.logo-container:hover .logo {
+  color: var(--accent);
+  text-shadow: 0 0 15px var(--box-shadow-overlay-color);
+}
+
+.logo-container:hover .logo-text {
+  color: var(--accent);
+  text-shadow: 0 0 15px var(--box-shadow-overlay-color);
+}
+
+.logo-container div.logo {
+  color: var(--text);
+  margin-right: 10px;
+  font-size: 30px;
+  transition: all 0.3s ease;
+}
+
+.logo-container h2.logo-text {
+  color: var(--text);
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+div.hamburger-icon {
+  font-size: 1.4rem;
+  color: var(--text);
+  position: absolute;
+  z-index: 99;
+  top: 10px;
+  right: 15px;
+  width: 50px;
+  padding: 12px 0;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+div.hamburger-icon:hover {
+  color: var(--accent);
+  text-shadow: 0 0 25px var(--accent);
+}
+
+/* search input and icon manipulation */
+
+div.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  position: relative;
+  background-color: var(--search-box-color);
+  width: 100%;
+  height: 45px;
+  max-width: 220px;
+  left: 15px;
+  margin-top: 3px;
+  border-radius: 7px;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  user-select: text;
+}
+
+input.search-box {
+  background-color: transparent;
+  padding: 5px;
+  max-width: 220px;
+  width: 100%;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: var(--text);
+  user-select: text;
+}
+
+i.fa-magnifying-glass {
+  z-index: 99;
+  color: var(--text);
+  font-size: 20px;
+  width: 52px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  background-color: var(--search-box-color);
+  border-radius: 7px;
+  flex-shrink: 0;
+  transition: color 0.3s ease, background-color 0.3s ease, text-shadow 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* styling list */
+
+ul {
+  position: relative;
+  top: 2px;
+  left: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  position: relative;
+  max-width: 220px;
+  width: 100%;
+  height: 45px;
+  margin-top: 10px;
+  line-height: 45px;
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+a.link {
+  display: flex;
+  align-items: center; /* ✅ จัดกลางแนวตั้ง */
+  justify-content: flex-start;
+  gap: 15px;
+  height: 45px;
+  padding: 0 6.5px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.1s ease;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+a.link i.link-icon {
+  display: flex; /* ✅ flex icon เพื่อให้กลาง */
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  height: 100%;
+  line-height: normal;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+a.link:hover {
+  background-color: var(--secondary);
+}
+
+a.link span.link-name {
+  font-weight: 600;
+  transition: opacity 0.7s ease;
+  white-space: nowrap;
+  text-wrap: nowrap;
+}
+
+/* tooltips wrapper & tooltips manipulation */
+
+.tooltips-wrapper {
+  position: fixed;
+  top: 132px;
+  left: 93px;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  /* background-color: red; */
+  height: 415px;
+  width: 130px;
+  pointer-events: none;
+}
+
+/* make tooltips opacity to zero first and we will
+make it appear on hover state */
+
+.tooltips-wrapper .tooltips {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* styling search icon tooltip */
+
+.search-icon-tooltip {
+  position: fixed;
+  top: 76px;
+  left: 93px;
+  background-color: var(--background);
+  color: var(--text);
+  border-radius: 5px;
+  height: 25px;
+  width: 110px;
+  line-height: 25px;
+  font-weight: 500;
+  text-align: left;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  cursor: default;
+  user-select: none;
+  text-indent: 10px;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  user-select: none;
+  pointer-events: none;
+}
+
+.search-icon-tooltip::before {
+  position: absolute;
+  left: -10px;
+  top: 7px;
+  width: 0;
+  height: 0;
+  content: "";
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent var(--background) transparent transparent;
+}
+
+/* tooltips style manipulation */
+
+.tooltips {
+  position: relative;
+  background-color: var(--background);
+  color: var(--text);
+  border-radius: 5px;
+  height: 25px;
+  width: 110px;
+  line-height: 25px;
+  font-weight: 500;
+  text-align: left;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  cursor: default;
+  user-select: none;
+  text-indent: 10px;
+  z-index: 9999;
+  /* display: none; */
+}
+
+.tooltips::before {
+  position: absolute;
+  left: -10px;
+  top: 7px;
+  width: 0;
+  height: 0;
+  content: "";
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent var(--background) transparent transparent;
+}
+
+/* sidebar collapse */
+
+.side-bar.collapsed {
+  width: 80px;
+}
+
+/* sidebar collapsed >> logo */
+
+.side-bar.collapsed .logo-container {
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  cursor: default;
+  overflow: hidden;
+  width: 0;
+  opacity: 0;
+}
+
+/* sidebar collapsed >> div.search-container */
+
+.side-bar.side-bar.collapsed div.search-container {
+  width: 50px;
+}
+
+/* sidebar collapsed >> ul li */
+
+.side-bar.collapsed ul li {
+  position: relative;
+  width: 50px;
+  height: 45px;
+  margin-top: 10px;
+  line-height: 45px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+/* sidebar collapsed search-icon */
+
+.side-bar.collapsed i.fa-magnifying-glass:hover {
+  color: var(--text);
+  background-color: var(--primary);
+  text-shadow: 0 0 45px var(--text);
+  box-shadow: 0 0 45px var(--box-shadow-overlay-color);
+}
+
+.side-bar.collapsed i.fa-magnifying-glass:active {
+  color: var(--text);
+  background-color: var(--primary);
+  text-shadow: 0 0 45px var(--text);
+  box-shadow: 0 0 45px var(--box-shadow-overlay-color);
+}
+
+/* sidebar collapsed hamburger-icon */
+
+.side-bar.collapsed .hamburger-icon:hover {
+  background-color: var(--secondary);
+}
+
+.side-bar.collapsed .hamburger-icon:active {
+  background-color: var(--secondary);
+}
+
+/* sidebar collapsed link name */
+
+.side-bar.collapsed a.link span.link-name {
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* sidebar collapsed on hover (showing the tooltips) */
+
+.side-bar.collapsed
+  li:nth-child(1):hover
+  ~ .tooltips-wrapper
+  .tooltips:nth-child(1),
+.side-bar.collapsed
+  li:nth-child(2):hover
+  ~ .tooltips-wrapper
+  .tooltips:nth-child(2),
+.side-bar.collapsed
+  li:nth-child(3):hover
+  ~ .tooltips-wrapper
+  .tooltips:nth-child(3),
+.side-bar.collapsed
+  li:nth-child(4):hover
+  ~ .tooltips-wrapper
+  .tooltips:nth-child(4),
+.side-bar.collapsed
+  li:nth-child(5):hover
+  ~ .tooltips-wrapper
+  .tooltips:nth-child(5),
+.side-bar.collapsed
+  li:nth-child(6):hover
+  ~ .tooltips-wrapper
+  .tooltips:nth-child(6),
+.side-bar.collapsed
+  li:nth-child(7):hover
+  ~ .tooltips-wrapper
+  .tooltips:nth-child(7),
+.side-bar.collapsed
+  li:nth-child(8):hover
+  ~ .tooltips-wrapper
+  .tooltips:nth-child(8) {
+  opacity: 1;
+}
+
+/* profile style section */
+
+.profile-img {
+  width: 75px;
+  height: 130px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 15px;
+  flex-shrink: 0;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.profile-img:hover {
+  filter: drop-shadow(0 0 100px var(--box-shadow-overlay-color))
+    drop-shadow(0 0 5px var(--primary)) drop-shadow(0 0 15px var(--accent));
+  transform: scale(1.05) translateY(-1%);
+}
+
+/* profile-content section */
+
+.profile-content {
+  position: fixed;
+  width: 250px;
+  bottom: 0;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  /* background-color: red; */
+  padding: 10px 15px;
+  gap: 15px;
+  cursor: default;
+  background-color: rgba(71, 62, 66, 0.3);
+  overflow: hidden;
+  transition: width 0.5s ease, background-color 0.5s ease;
+  border-radius: 15px;
+}
+
+.side-bar.collapsed .profile-content {
+  width: 80px;
+  background-color: var(--background);
+}
+
+.profile-content p.name {
+  color: var(--text);
+  font-weight: 800;
+  font-size: 15px;
+  margin: 0;
+  margin-bottom: 5px;
+  text-wrap: nowrap;
+}
+
+.profile-content p.name:hover {
+  filter: brightness(150%);
+  color: var(--accent);
+  text-shadow: 0 0 35px var(--accent), 0 0 20px #ffc299;
+}
+
+.profile-content div.bio-details p {
+  font-size: 13px;
+  margin: 0;
+}
+
+div.profile-content .bio-details p {
+  color: var(--text);
+  font-weight: 500;
+  text-wrap: nowrap;
+}
+
+.profile-content .bio:hover p {
+  filter: brightness(100%);
+  color: var(--text);
+  text-shadow: 0 0 45px var(--accent), 0 0 10px #ffb481, 0 0 5px #fff;
+  transform: scale(1.05) translateX(2%) translateY(-12%);
+}
+
+.profile-content .bio p {
+  transition: all 0.3s ease-in-out;
+}
+
+/* logout icon manipulation */
+
+div.profile-content #logOut {
+  position: absolute;
+  right: 15px;
+  font-size: 1.2rem;
+  color: var(--text);
+  transform: rotate(180deg);
+  transition: all 0.3s ease;
+  /* background-color: red; */
+  width: 50px;
+  height: 100px;
+  flex-shrink: 1;
+  text-align: center;
+  line-height: 100px;
+}
+
+div.profile-content #logOut:hover {
+  color: var(--accent);
+}
+
+/* text bio manipulation on each state */
+
+div.bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 13px;
+  height: 130px;
+  flex-shrink: 1;
+  flex-grow: 0;
+  width: 100%;
+  max-width: 140px;
+  transition: opacity 0.05s ease;
+  opacity: 1;
+}
+
+.side-bar.collapsed div.bio {
+  opacity: 0;
+}
+
+/* profile image division on expanded state & on collapsed state */
+
+div.profile-image {
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+.side-bar.collapsed div.profile-image {
+  opacity: 0;
+}

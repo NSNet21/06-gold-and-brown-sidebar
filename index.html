@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar Demo2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="side-bar" id="sideBar">
+      <div class="logo-container">
+        <div class="logo"><i class="fa-solid fa-terminal"></i></div>
+        <h2 class="logo-text">CodingLab</h2>
+      </div>
+      <div class="hamburger-icon" id="toggleMenu">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass link-icon" id="searchIcon"></i>
+        <input class="search-box" type="text" placeholder="Search..." />
+      </div>
+      <ul>
+        <li>
+          <a href="#" class="link"
+            ><i class="fa-solid fa-border-all link-icon"></i
+            ><span class="link-name">Dashboard</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="link"
+            ><i class="fa-solid fa-user link-icon"></i
+            ><span class="link-name">User</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="link"
+            ><i class="fa-solid fa-comment link-icon"></i
+            ><span class="link-name">Messages</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="link"
+            ><i class="fa-solid fa-chart-simple link-icon"></i
+            ><span class="link-name">Analytics</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="link"
+            ><i class="fa-solid fa-folder link-icon"></i
+            ><span class="link-name">File Manager</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="link"
+            ><i class="fa-solid fa-cart-shopping link-icon"></i
+            ><span class="link-name">Order</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="link"
+            ><i class="fa-regular fa-heart link-icon"></i
+            ><span class="link-name">Saved</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="link"
+            ><i class="fa-solid fa-gear link-icon"></i
+            ><span class="link-name">Setting</span>
+          </a>
+        </li>
+
+        <span class="search-icon-tooltip" id="sticonTooltip">Search</span>
+
+        <div class="tooltips-wrapper">
+          <span class="tooltips">Dashboard</span>
+          <span class="tooltips">User</span>
+          <span class="tooltips">Messages</span>
+          <span class="tooltips">Analytics</span>
+          <span class="tooltips">File Manager</span>
+          <span class="tooltips">Order</span>
+          <span class="tooltips">Saved</span>
+          <span class="tooltips">Setting</span>
+        </div>
+      </ul>
+
+      <div class="profile-content">
+        <div class="profile-image">
+          <img
+            class="profile-img"
+            src="images/flare of light boy.jpg"
+            alt="シティノン"
+            title="シティノン"
+          />
+        </div>
+        <div class="bio">
+          <p class="name">シティノ <br> チャンジット</p>
+          <div class="bio-details">
+            <p>Web Designer</p>
+            <p>Frontend Developer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
