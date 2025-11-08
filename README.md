@@ -15,7 +15,7 @@ Designed with a **gold–brown theme**, glowing hover effects, tooltips on colla
 
 ## 🚀 Features
 
-- 🪶 **Collapsible Sidebar** — toggle between expanded and collapsed states.
+- ⚙️ **Collapsible Sidebar** — toggle between expanded and collapsed states.
 - 💡 **Dynamic Tooltips** — appear automatically when the sidebar is collapsed.
 - 🎨 **Gold–Brown Theme** — elegant color palette using CSS variables.
 - 🧭 **Search Box Animation** — interactive search icon with tooltip logic.
